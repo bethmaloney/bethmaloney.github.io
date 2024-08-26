@@ -10,7 +10,7 @@
 ############################
 
 # Name of website
-title: Beths Blog
+title: Practical Programming
 
 # Your name to show in the footer
 author: Beth Maloney
@@ -52,15 +52,15 @@ round-avatar: true
 social-network-links:
   email: "someone@example.com"
   rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
-  patreon: DeanAttali
-  youtube: "@daattali"
-  whatsapp: 15551212
+# facebook: deanattali
+  github: bethmaloney
+# twitter: daattali
+# patreon: DeanAttali
+# youtube: "@daattali"
+# whatsapp: 15551212
 #  medium: yourname
 #  reddit: yourname
-#  linkedin: daattali
+  linkedin: bethmaloney
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
@@ -85,7 +85,7 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: This website is a virtual proof that I'm awesome
+rss-description: TPractital Programming
 
 ###########################
 # --- General options --- #
@@ -93,14 +93,14 @@ rss-description: This website is a virtual proof that I'm awesome
 
 # Select which social network share links to show in posts
 share-links-active:
-  twitter: true
-  facebook: true
+  twitter: false
+  facebook: false
   linkedin: true
   vk: false
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+url-pretty: "Practical Programming"
 
 # Add the website title to the title of every page
 title-on-all-pages: true

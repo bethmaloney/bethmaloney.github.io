@@ -89,6 +89,19 @@ By investing time in a few well-crafted skills, the agent has enough context to 
 
 ## Further reading
 
-* Link to Anthropic docs
-* Link to Copilot docs
-* Link to Codex docs
+### Official documentation
+
+* [Agent Skills - Claude Code](https://code.claude.com/docs/en/skills)
+* [About Agent Skills - GitHub Copilot](https://docs.github.com/en/copilot/concepts/agents/about-agent-skills)
+* [Agent Skills - OpenAI Codex](https://developers.openai.com/codex/skills/)
+
+### Skills repositories
+
+* [anthropics/skills](https://github.com/anthropics/skills) - Anthropic's official skills collection
+* [openai/skills](https://github.com/openai/skills) - OpenAI's skills catalog for Codex
+* [github/awesome-copilot](https://github.com/github/awesome-copilot) - Community skills, agents and prompts
+
+### Additional reading
+
+* [Equipping Agents for the Real World with Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) - Anthropic engineering blog on the design behind skills
+* [Claude Skills are awesome, maybe a bigger deal than MCP](https://simonwillison.net/2025/Oct/16/claude-skills/) - Simon Willison's analysis

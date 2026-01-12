@@ -3,6 +3,8 @@ layout: post
 title: "Getting Started with Agent Skills"
 subtitle: "Reusable instructions for AI coding tools"
 tags: [ai, coding-assistants, skills]
+cover-img: /assets/img/agentic-skills-cover.png
+thumbnail-img: /assets/img/agentic-skills-cover.png
 ---
 
 The latest generation of AI coding assistants supports **skills** - reusable instructions that teach agents how to perform tasks in a repeatable way. Skills aren't limited to just programming related tasks, they can be used to create PRs, read JIRA tickets and much more. I'll explain how to create skills and how they can be chained together to complete complex workflows.

@@ -768,3 +768,107 @@ a:focus {
 .post-preview:nth-child(3) { animation-delay: 0.3s; }
 .post-preview:nth-child(4) { animation-delay: 0.4s; }
 .post-preview:nth-child(5) { animation-delay: 0.5s; }
+
+/* --- About Page Styles --- */
+
+.about-intro {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  border-left: 3px solid var(--accent);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+}
+
+/* Skill Badges */
+.skill-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1.5rem 0;
+}
+
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  color: var(--text-primary);
+  padding: 0.6rem 1.1rem;
+  border-radius: 2rem;
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+}
+
+.skill-badge:hover {
+  border-color: var(--accent);
+  box-shadow: 0 0 15px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.skill-badge i {
+  color: var(--accent);
+  font-size: 1rem;
+}
+
+/* Contact Buttons */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  color: var(--text-primary) !important;
+  padding: 0.8rem 1.5rem;
+  border-radius: 0.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  text-decoration: none !important;
+}
+
+.contact-btn:hover {
+  background: var(--accent) !important;
+  color: var(--bg-deep) !important;
+  border-color: var(--accent);
+  box-shadow: 0 0 20px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.contact-btn i {
+  font-size: 1.1rem;
+}
+
+/* About CTA */
+.about-cta {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: 0.5rem;
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 767px) {
+  .contact-links {
+    flex-direction: column;
+  }
+
+  .contact-btn {
+    justify-content: center;
+  }
+}

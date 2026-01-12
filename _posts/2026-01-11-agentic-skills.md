@@ -7,7 +7,7 @@ cover-img: /assets/img/agentic-skills-cover.png
 thumbnail-img: /assets/img/agentic-skills-cover.png
 ---
 
-The latest generation of AI coding assistants supports **skills** - reusable instructions that teach agents how to perform tasks in a repeatable way. Skills aren't limited to just programming related tasks, they can be used to create PRs, read JIRA tickets and much more. I'll explain how to create skills and how they can be chained together to complete complex workflows.
+The latest generation of AI coding assistants supports **skills** - reusable instructions that teach agents how to perform tasks in a repeatable way. Skills aren't limited to just programming related tasks, they can be used to create PRs, read JIRA tickets, and much more. I'll explain how to create skills and how they can be chained together to complete complex workflows.
 
 ## Skills Support Comparison
 
@@ -38,7 +38,7 @@ Skills are really great for:
 
 * Always-needed context - If the agent always needs the context then consider using an AGENTS.md/CLAUDE.md instead
 * Build/lint commands - These should go into the AGENTS.md instead of a skill as the instructions are short and will almost always be needed
-* Project specific instructions - These should be placed in nested AGENTS.md instead of a skill as it allows for reading by tools such as CodeRabbit and the agent will more reliably load the instructions
+* Project specific instructions - These should be placed in nested AGENTS.md instead of a skill. This allows reading by tools such as CodeRabbit and the agent will more reliably load the instructions
 
 ## How to create a skill
 
@@ -50,14 +50,24 @@ It's important to iterate over a skill when creating it. Make sure to exit the a
 
 ## Example of creating a skill
 
-### Read, create and edit JIRA tickets
-TODO
-
 ### Create a PR
-TODO
+
+This example shows how skills for well-known tools can focus on workflow rather than tool usage. The GitHub CLI is well known so you don't have to specify how to use it in the skill as the agent will have that knowledge in its training data. It's important to list out all the steps in the skill. Providing a template on how the agent should format its output will improve its outcomes.
+
+> Use the skill creator skill to create a skill that can use the gh cli to create PRs. The PRs should use the template at: .github/pull_request_template.md. All PRs and branches must include the ticket number if specified. PRs must be forked from the master branch. If not on the master branch then stash the changes, change to master, create the branch and then unstash the changes.
+
+### Read, create and edit JIRA tickets
+
+This example demonstrates working with a lesser-known tool that requires more explicit guidance. The [Atlassian CLI](https://developer.atlassian.com/cloud/acli/guides/introduction/) (ACLI) was released less than a year ago and so we'll need to help the agent by providing more examples on how to call this tool. I had to iterate a few times before the skill would work consistently. Whenever the tool failed I'd use a prompt similar to this to correct the error `You failed to call the acli correctly in the last request. What changes do we need to make to the jira ticket skill to help you call the acli correctly next time`.
+
+> Use the skill creator skill to create a skill that can use the acli to read, create and edit jira tickets. We should use the acli https://developer.atlassian.com/cloud/acli/guides/introduction. Use the --help flag to understand how to call the tool 
+
 
 ### Create a Playwright component test
-TODO
+
+This example shows how skills can capture project-specific patterns that aren't in the agent's training data. Sometimes agents have trouble following specific testing patterns. You could load the testing patterns into the AGENTS.md but then you'd be using up your context for instructions you might not use. Instead use a skill so that the instructions are only loaded when they're needed.
+
+> Use the skill creator skill to create a skill for creating playwright component tests. Review the existing tests to understand how the tests should be structured
 
 ## Common mistakes and errors
 
@@ -86,6 +96,10 @@ This chains together multiple skills:
 All I need to do is review the generated code and mark the PR as ready.
 
 By investing time in a few well-crafted skills, the agent has enough context to handle bug fixes almost entirely on its own.
+
+## Conclusion
+
+Start with one workflow that frustrates you, build a skill for it, and iterate until it works reliably. You might be surprised at how many repetitive tasks the agent can automate for you.
 
 ## Further reading
 
